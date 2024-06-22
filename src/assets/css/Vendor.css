@@ -1,0 +1,44 @@
+.vendors-container {
+    background-color: #333;
+    color: #eee;
+    padding: 20px;
+    max-width: 800px;
+    margin: 50px auto;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    min-height: 100vh;
+  }
+
+  
+  
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #fff;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+  
+  th, td {
+    border: 1px solid #555;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  th {
+    background-color: #444;
+    color: #ddd;
+  }
+  
+  td {
+    background-color: #555;
+  }
+  
+  tr:hover td {
+    background-color: #666;
+  }
+  

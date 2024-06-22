@@ -1,0 +1,120 @@
+.admin-home-container {
+    /* background-color: #333; */
+    color: #000;
+    padding: 20px;
+    max-width: 90%;
+    margin: 0px auto;
+    border-radius: 5px;
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); */
+    text-align: center;
+  }
+  
+  .h2 {
+    color: #000;
+    margin: 20px;
+    margin-bottom: 10px;
+    margin-top: 40px;
+    margin-left: 20px;
+    margin-right: 20px;
+    text-align: start;
+  }
+  
+  .admin-card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  
+  .admin-card {
+    background-color: #444;
+    color: #ddd;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 5px;
+    width: 28%;
+    text-align: left;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  .admin-card h3 {
+    color: #fff;
+  }
+  
+  .admin-card p {
+    color: #ccc;
+  }
+  
+  .admin-button {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 15px;
+    background-color: #4CAF50;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 3px;
+    transition: background-color 0.3s;
+  }
+  
+  .admin-button:hover {
+    background-color: #45a049;
+  }
+  .cards-container {
+    /* styles.css */
+  }
+
+/* body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f4f8; 
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+} */
+
+.container {
+  text-align: center;
+}
+
+h1 {
+  color: #007acc; /* Baby blue color */
+}
+
+.cards {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px;
+  width: 100%;
+  gap: 10px;
+}
+
+.card {
+  background-color: #fff;
+  border: 1px solid #d1d9e6; /* Light grey border */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 32%;
+  text-align: left;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  /* transform: translateY(-10px); */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card h2 {
+  font-size: 1.5em;
+  text-align: left;
+  margin-bottom: 10px;
+  color: #007acc; /* Baby blue color */
+}
+
+.card p {
+  font-size: 2em;
+  margin: 0;
+  color: #333;
+}

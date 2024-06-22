@@ -1,0 +1,60 @@
+.clients-container {
+    background-color: #333;
+    color: #eee;
+    padding: 20px;
+    min-height: 100vh;
+    border-radius: 5px;
+  }
+  
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #fff;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+  
+  th, td {
+    border: 1px solid #555;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  th {
+    background-color: #444;
+    color: #ddd;
+  }
+  
+  td {
+    background-color: #555;
+  }
+  
+  button {
+    padding: 5px 10px;
+    margin: 0 5px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    opacity: 0.8;
+  }
+  
+  button:focus {
+    outline: none;
+  }
+  
+  button:first-child {
+    background-color: #4CAF50; /* Green */
+    color: white;
+  }
+  
+  button:last-child {
+    background-color: #f44336; /* Red */
+    color: white;
+  }

@@ -1,0 +1,71 @@
+/* Container for the entire applications page */
+.applications-container {
+    background-color: #333; /* Dark grey background */
+    color: #fff; /* White text */
+    padding: 20px;
+    border-radius: 5px;
+    font-family: Arial, sans-serif;
+    min-height: 100vh; /* Full height */
+    
+  }
+
+  .applications-container form{
+    margin: 0px auto;
+    width: 50%;
+    text-align: left;
+    border: 1px solid #555;
+    padding: 5pc;
+    border-radius: 10px;
+  }
+  
+  /* Header styling */
+  .applications-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  /* Table styling */
+  .applications-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  /* Table header styling */
+  .applications-table th,
+  .applications-table td {
+    border: 1px solid #555; /* Grey border */
+    padding: 10px;
+    text-align: left;
+  }
+  
+  /* Table header background color */
+  .applications-table th {
+    background-color: #444; /* Slightly lighter grey */
+  }
+  
+  /* Even row background color */
+  .applications-table tr:nth-child(even) {
+    background-color: #444; /* Slightly lighter grey */
+  }
+  
+  /* Odd row background color */
+  .applications-table tr:nth-child(odd) {
+    background-color: #555; /* Slightly lighter grey */
+  }
+  
+  /* Hover effect for table rows */
+  .applications-table tr:hover {
+    background-color: #666; /* Light grey on hover */
+  }
+  
+  /* Link styling */
+  .applications-container a {
+    color: #1e90ff; /* DodgerBlue */
+    text-decoration: none;
+  }
+  
+  .applications-container a:hover {
+    text-decoration: underline;
+  }
+  

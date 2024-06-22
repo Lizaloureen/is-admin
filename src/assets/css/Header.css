@@ -1,0 +1,39 @@
+/* CSS for the Header component */
+.navbar {
+    background-color: #333; /* Dark grey background */
+    padding: 0px 30px;
+  }
+  
+  .nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo {
+    color: #fff; /* White color for the logo */
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .nav-list {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .nav-item {
+    margin: 0;
+  }
+  
+  .nav-link {
+    color: #ccc; /* Light grey color for links */
+    text-decoration: none;
+    font-size: 1rem;
+  }
+  
+  .nav-link:hover {
+    color: #fff; /* White color on hover */
+  }
+  
