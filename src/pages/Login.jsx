@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import '../assets/css/Login.css';
+import axios from 'axios';
 
 const AdminLogin = () => {
   const [formData, setFormData] = useState({
@@ -12,11 +13,32 @@ const AdminLogin = () => {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Add your login logic here
-    console.log('Login data submitted:', formData);
-    // You can add authentication logic here and navigate to the admin dashboard upon success
+
+    const form_data = { password: formData.password, username: formData.email };
+    console.log(form_data)
+    try {
+      const url = "http://127.0.0.1:8000/auth/login";
+      const headers = {
+        "Content-Type": "application/json",
+      };
+      const res = await axios.post(url, form_data, headers);
+      const data = res.data;
+      console.log("data", data);
+      if (data?.success === true) {
+        localStorage.setItem("isAdminToken", data.data.token);
+        localStorage.setItem("isAdminTokenData", JSON.stringify(data.data.user));
+        window.location.href = "/";
+        alert("Login successful");
+      }else{
+        alert("Login failed");
+      }
+      console.log("data", data);
+    } catch (error) {
+      console.log("The Error", error);
+      alert("Something went wrong");
+    }
   };
 
   return (
@@ -29,7 +51,7 @@ const AdminLogin = () => {
             type="text"
             id="email"
             name="email"
-            value={formData.username}
+            value={formData.email}
             onChange={handleChange}
             required
           />

@@ -1,6 +1,6 @@
 /* Container for the entire applications page */
 .applications-container {
-    background-color: #333; /* Dark grey background */
+    background-color: #ffffff; /* Dark grey background */
     color: #fff; /* White text */
     padding: 20px;
     border-radius: 5px;
@@ -22,6 +22,7 @@
   .applications-container h2 {
     text-align: center;
     margin-bottom: 20px;
+    color: black
   }
   
   /* Table styling */

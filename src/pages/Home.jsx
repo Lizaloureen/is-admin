@@ -84,9 +84,9 @@ const AdminHome = () => {
             </div>
         </div>
 
-        <div style={{width: '100%'}}>
+        <div style={{width: '100%', display: 'flex', justifyContent: 'space-between'}}>
 
-        <div style={{padding:'5px', backgroundColor:'white', width:'520px' }}>
+        <div style={{padding:'5px', backgroundColor:'white', width:'48%' }}>
           <h3>No of Application against the type of firearm</h3>
             <Chart
                 options={chartData.options}
@@ -94,6 +94,10 @@ const AdminHome = () => {
                 type="bar"
                 width="500"
               />
+        </div>
+        <div style={{padding:'5px', backgroundColor:'white', width:'48%' }}>
+          <h3>Firearm Distribution</h3>
+            
         </div>
         </div>
 

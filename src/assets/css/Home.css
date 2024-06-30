@@ -22,7 +22,7 @@
   .admin-card-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-between;
   }
 
   
@@ -32,7 +32,7 @@
     padding: 20px;
     margin: 10px;
     border-radius: 5px;
-    width: 28%;
+    width: 20%;
     text-align: left;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   }
@@ -85,7 +85,7 @@ h1 {
 .cards {
   display: flex;
   justify-content: space-around;
-  margin: 20px;
+  margin-bottom: 20px;
   width: 100%;
   gap: 10px;
 }
@@ -107,7 +107,7 @@ h1 {
 }
 
 .card h2 {
-  font-size: 1.5em;
+  font-size: 1em;
   text-align: left;
   margin-bottom: 10px;
   color: #007acc; /* Baby blue color */
@@ -117,4 +117,17 @@ h1 {
   font-size: 2em;
   margin: 0;
   color: #333;
+  font-weight: bold;
+}
+
+.button-link {
+  font: bold 11px Arial;
+  text-decoration: none;
+  background-color: #EEEEEE;
+  color: #333333;
+  padding: 2px 6px 2px 6px;
+  border-top: 1px solid #CCCCCC;
+  border-right: 1px solid #333333;
+  border-bottom: 1px solid #333333;
+  border-left: 1px solid #CCCCCC;
 }

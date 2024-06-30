@@ -57,14 +57,12 @@ const AdminApplicationsPage = () => {
     }
   }
 
-  const handleApprove = async (e) => {
-    e.preventDefault()
-
+  const handleApprove = async (id) => {
 
     const url = `http://localhost:8000/admin/applications/approve`
     // const token = getToken() 
     try {
-      const formData = {id: appId}
+      const formData = {id: id}
       const response = await axios.post(url, formData, {
         headers: {
           'Content-Type': 'application/json',
@@ -74,10 +72,12 @@ const AdminApplicationsPage = () => {
       });
       const data = response.data;
       console.log(data);
+      alert('approved successfully')
       // Update the applications state
       navigate(0);
     } catch (error) { 
       console.error('Error approving application:', error);
+      alert('failed to approve')
     }
   }
 
@@ -109,7 +109,7 @@ const AdminApplicationsPage = () => {
       <table className="applications-table">
         <thead>
           <tr>
-            <th>Application ID</th>
+            <th>Good Conduct</th>
             <th>Client Name</th>
             <th>Type of firearm</th>
             <th>Status</th>
@@ -121,7 +121,7 @@ const AdminApplicationsPage = () => {
         <tbody>
           {applications?.data?.map((application, key) => (
             <tr key={key + 1}>
-              <td>{key + 1}</td>
+              <td><a className='button-link' href='' target='_blank' download={`http://locahost:8000${application?.good_conduct}`}> {application?.good_conduct}</a></td>
               <td>{application?.client?.first_Name} {application?.client?.last_Name}</td>
               <td>{application.type_of_firearm}</td>
               <td>{application.status}</td>
