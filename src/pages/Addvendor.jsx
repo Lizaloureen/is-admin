@@ -44,12 +44,15 @@ const AddVendor = () => {
   };
 
   return (
-    <div className="applications-container ">
+    <div className="applications-container text-dark">
       <h2>Add Vendor</h2>
       <form onSubmit={handleSubmit}>
         <div className="form-group">
-          <label htmlFor="vendorName">Name *</label>
+          <label className="form-label" htmlFor="vendorName">
+            Name *
+          </label>
           <input
+            className="form-control"
             type="text"
             id="vendorName"
             value={vendorName}
@@ -58,8 +61,11 @@ const AddVendor = () => {
           />
         </div>
         <div className="form-group">
-          <label htmlFor="vendorEmail">Email *</label>
+          <label className="form-label" htmlFor="vendorEmail">
+            Email *
+          </label>
           <input
+            className="form-control"
             type="email"
             id="vendorEmail"
             value={vendorEmail}
@@ -68,8 +74,11 @@ const AddVendor = () => {
           />
         </div>
         <div className="form-group">
-          <label htmlFor="vendorPhone">Phone Number *</label>
+          <label className="form-label" htmlFor="vendorPhone">
+            Phone Number *
+          </label>
           <input
+            className="form-control"
             type="text"
             id="vendorPhone"
             value={vendorPhone}
@@ -78,8 +87,11 @@ const AddVendor = () => {
           />
         </div>
         <div className="form-group">
-          <label htmlFor="address">Address *</label>
+          <label className="form-label" htmlFor="address">
+            Address *
+          </label>
           <textarea
+            className="form-control"
             id="address"
             name="address"
             value={address}

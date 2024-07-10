@@ -15,95 +15,152 @@ const AdminHome = () => {
         id: "Type of Firearm",
       },
       xaxis: {
-        categories: firearmsTitle
-      }
+        categories: firearmsTitle,
+      },
     },
     series: [
       {
         name: "Number of Applications",
-        data: firearmsArray
-      }
-    ]
-  }
+        data: firearmsArray,
+      },
+    ],
+  };
 
   const [stats, setStats] = useState({});
+  const [statAppDist, setStatAppDist] = useState({});
 
-  useEffect(() => { 
-    getStats()
-    getStatsFirearms()
+  useEffect(() => {
+    getStats();
+    getStatsFirearms();
+    getStatAppDist();
   }, []);
 
   const getStatsFirearms = async () => {
-    try{
-      const res = await axios.get('http://localhost:8000/admin/stats/firearms-dist')
-      const data = res.data
-      const firearms_stats = data.data
-      let ser = []
-      let cats = []
-      for (let [key, value] of Object.entries(firearms_stats)) {   
-        ser.push(value)
-        cats.push(key)
+    try {
+      const res = await axios.get(
+        "http://localhost:8000/admin/stats/firearms-dist"
+      );
+      const data = res.data;
+      const firearms_stats = data.data;
+      let ser = [];
+      let cats = [];
+      for (let [key, value] of Object.entries(firearms_stats)) {
+        ser.push(value);
+        cats.push(key);
       }
-      setFirearmsArray(ser)
-      setFirearmsTitle(cats)
+      setFirearmsArray(ser);
+      setFirearmsTitle(cats);
     } catch (error) {
-      console.error(error)
+      console.error(error);
     }
-
-  }
+  };
 
   const getStats = async () => {
-    try{
-      const res = await axios.get('http://localhost:8000/admin/stats')
-      const data = res.data
-      setStats(data)
+    try {
+      const res = await axios.get("http://localhost:8000/admin/stats");
+      const data = res.data;
+      setStats(data);
     } catch (error) {
-      console.error(error)
+      console.error(error);
     }
-
-  }
+  };
+  const getStatAppDist = async () => {
+    try {
+      const res = await axios.get("http://localhost:8000/admin/stats/app-dist");
+      const data = res.data;
+      setStatAppDist(data.data);
+    } catch (error) {
+      console.error(error);
+    }
+  };
   return (
     <div className="admin-home-container">
       <h2 className="h2">Admin Dashboard</h2>
       <div className="cards">
-            <div className="card">
-                <h2>Total Applications</h2>
-                <p id="applications-count">{stats?.applications}</p>
-            </div>
-            <div className="card">
-                <h2>Total Vendors</h2>
-                <p id="vendors-count">{stats?.vendors}</p>
-            </div>
-            <div className="card">
-                <h2>Total Clients</h2>
-                <p id="clients-count">{stats?.clients}</p>
-            </div>
-            <div className="card">
-                <h2>Total Firearms</h2>
-                <p id="firearms-count">{stats?.firearms}</p>
-            </div>
+        <div className="card">
+          <h2>Total Applications</h2>
+          <p id="applications-count">{stats?.applications}</p>
         </div>
+        <div className="card">
+          <h2>Total Vendors</h2>
+          <p id="vendors-count">{stats?.vendors}</p>
+        </div>
+        <div className="card">
+          <h2>Total Clients</h2>
+          <p id="clients-count">{stats?.clients}</p>
+        </div>
+        <div className="card">
+          <h2>Total Firearms</h2>
+          <p id="firearms-count">{stats?.firearms}</p>
+        </div>
+      </div>
 
-        <div style={{width: '100%', display: 'flex', justifyContent: 'space-between'}}>
-
-        <div style={{padding:'5px', backgroundColor:'white', width:'48%' }}>
+      <div
+        style={{
+          width: "100%",
+          display: "flex",
+          justifyContent: "space-between",
+        }}
+      >
+        <div style={{ padding: "5px", backgroundColor: "white", width: "48%" }}>
           <h3>No of Application against the type of firearm</h3>
-            <Chart
-                options={chartData.options}
-                series={chartData.series}
-                type="bar"
-                width="500"
-              />
+          <Chart
+            options={chartData.options}
+            series={chartData.series}
+            type="bar"
+            width="500"
+          />
         </div>
-        <div style={{padding:'5px', backgroundColor:'white', width:'48%' }}>
-          <h3>Firearm Distribution</h3>
-            
+        <div
+          style={{ padding: "20px", backgroundColor: "white", width: "48%" }}
+        >
+          <h3>Regional Firearm Distribution</h3>
+          <table className="table">
+            <tbody
+              style={{
+                backgroundColor: "white",
+                color: "black",
+              }}
+            >
+              {statAppDist &&
+                Object.keys(statAppDist).map((key, index) => {
+                  return (
+                    <tr
+                      key={index}
+                      style={{
+                        backgroundColor: "white",
+                        color: "black",
+                        textAlign: "left",
+                      }}
+                    >
+                      <td
+                        style={{
+                          backgroundColor: "white",
+                          color: "black",
+                          textAlign: "left",
+                        }}
+                      >
+                        {key} :
+                      </td>{" "}
+                      <td
+                        style={{
+                          backgroundColor: "white",
+                          color: "black",
+                          textAlign: "left",
+                        }}
+                      >
+                        {statAppDist[key]}
+                      </td>
+                    </tr>
+                  );
+                })}
+            </tbody>
+          </table>
         </div>
-        </div>
+      </div>
 
-        <h2 className="h2">Easy Navigations</h2>      
-        <div className="admin-card-container">
-        
+      <h2 className="h2">Easy Navigations</h2>
+      <div className="admin-card-container">
         <div className="admin-card">
           <h3>View Clients</h3>
           <p>View all clients in the portal.</p>

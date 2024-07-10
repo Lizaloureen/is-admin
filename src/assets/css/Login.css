@@ -18,7 +18,7 @@ h2 {
   margin-bottom: 15px;
 }
 
-label {
+/* label {
   display: block;
   margin-bottom: 5px;
   color: #ccc;
@@ -34,7 +34,7 @@ select {
   margin-top: 5px;
   background-color: #fff;
   color: #444;
-}
+} */
 
 button {
   width: 100%;

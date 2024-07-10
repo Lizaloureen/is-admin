@@ -28,50 +28,52 @@ const Firearms = () => {
             <button style={{ backgroundColor: "green" }}> Add Firearm</button>
           </Link>
         </div>
-        <table className="applications-table">
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>Name</th>
-              <th>Type</th>
-              <th>Serial No.</th>
-              <th>Manufacturer</th>
-              <th>Manufactured On</th>
-              <th>Vendor</th>
-              <th>Description</th>
-              <th>Status</th>
-              <th>Action</th>
-            </tr>
-          </thead>
-          <tbody>
-            {firearms?.data?.map((firearm, key) => (
-              <tr key={key + 1}>
-                <td>
-                  <img
-                    src={`http://127.0.0.1:8000/${firearm.image}`}
-                    alt=""
-                    style={{ width: "50px", height: "50px" }}
-                  />
-                </td>
-                <td>{firearm?.name} </td>
-                <td>{firearm.firearm_type}</td>
-                <td>{firearm.serial_number}</td>
-                <td>{firearm.manufacturer}</td>
-                <td>{firearm.date_of_manufacture}</td>
-                <td>{firearm.vendor.name}</td>
-                <td>{firearm.description}</td>
-                <td>{firearm.status}</td>
-                <td>
-                  {firearm.status == "Available" && (
-                    <p style={{ color: "lime", cursor: "pointer" }}>
-                      Issue firearm
-                    </p>
-                  )}
-                </td>
+        <div className="table-responsive">
+          <table className="table table-light table-striped table-md table-hover text-start ">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Serial No.</th>
+                <th>Manu.</th>
+                <th>Manu_On</th>
+                <th>Vendor</th>
+                <th>Description</th>
+                <th>Status</th>
+                <th>Action</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody className="h6">
+              {firearms?.data?.map((firearm, key) => (
+                <tr key={key + 1}>
+                  <td>
+                    <img
+                      src={`http://127.0.0.1:8000/${firearm.image}`}
+                      alt=""
+                      style={{ width: "50px", height: "50px" }}
+                    />
+                  </td>
+                  <td>{firearm?.name} </td>
+                  <td>{firearm.firearm_type}</td>
+                  <td>{firearm.serial_number}</td>
+                  <td>{firearm.manufacturer}</td>
+                  <td>{firearm.date_of_manufacture}</td>
+                  <td>{firearm.vendor.name}</td>
+                  <td>{firearm.description}</td>
+                  <td>{firearm.status}</td>
+                  <td>
+                    {/* {firearm.status == "Available" && (
+                      <p style={{ color: "lime", cursor: "pointer" }}>
+                        Issue firearm
+                      </p>
+                    )} */}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   );

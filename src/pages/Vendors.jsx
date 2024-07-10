@@ -34,28 +34,31 @@ const VendorsPage = () => {
             <button style={{ backgroundColor: "green" }}> Add Vendor</button>
           </Link>
         </div>
-        <table className="applications-table">
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>Vendor Name</th>
-              <th>Phone</th>
-              <th>Email</th>
-              <th>Address</th>
-            </tr>
-          </thead>
-          <tbody>
-            {vendors?.data?.map((vendor) => (
-              <tr key={vendor.id}>
-                <td>{vendor.id}</td>
-                <td>{vendor.name}</td>
-                <td>{vendor.company_phone}</td>
-                <td>{vendor.company_email}</td>
-                <td>{vendor.company_address}</td>
+
+        <div className="table-responsive p-4 rounded border">
+          <table className="table table-light table-striped table-sm table-hover text-start">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Vendor Name</th>
+                <th>Phone</th>
+                <th>Email</th>
+                <th>Address</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {vendors?.data?.map((vendor, index) => (
+                <tr key={index}>
+                  <td>{index + 1}</td>
+                  <td>{vendor.name}</td>
+                  <td>{vendor.company_phone}</td>
+                  <td>{vendor.company_email}</td>
+                  <td>{vendor.company_address}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   );

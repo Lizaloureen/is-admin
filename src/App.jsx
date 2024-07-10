@@ -10,6 +10,7 @@ import AddVendor from "./pages/Addvendor";
 import Users from "./pages/Users";
 import Firearms from "./pages/Firearms";
 import AddFirearm from "./pages/AddFirearm";
+import Licences from "./pages/Licences";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path="/vendors" element={<VendorsPage />} />
         <Route path="/vendors/add" element={<AddVendor />} />
         <Route path="/clients" element={<ClientsPage />} />
+        <Route path="/licences" element={<Licences />} />
         <Route path="/applications" element={<AdminApplicationsPage />} />
         <Route path="/manage-users" element={<Users />} />
       </Route>

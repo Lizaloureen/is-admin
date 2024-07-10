@@ -1,10 +1,10 @@
-import React from 'react'
-import { Link, useNavigate } from 'react-router-dom'
-import '../assets/css/Header.css';
-import { getUser } from '../utils/helpers';
+import React from "react";
+import { Link, useNavigate } from "react-router-dom";
+import "../assets/css/Header.css";
+import { getUser } from "../utils/helpers";
 
 const Header = () => {
-  const user = getUser();  
+  const user = getUser();
   const navigate = useNavigate();
 
   const logUserOut = () => {
@@ -16,13 +16,40 @@ const Header = () => {
   return (
     <div className="navbar">
       <div className="nav-container container">
-        <Link to='/' className="logo">Firearm Licencing</Link>
+        <Link to="/" className="logo">
+          Firearm Licencing
+        </Link>
         <ul className="nav-list">
-          <li className="nav-item"><Link to='/' className="nav-link">Home</Link></li>
-          <li className="nav-item"><Link to='/vendors' className="nav-link">Vendors</Link> </li>
-          <li className="nav-item"><Link to='/applications' className="nav-link">Applications</Link> </li>
-          <li className="nav-item"><Link to='/clients' className="nav-link">Clients</Link> </li>
-          <li className="nav-item"><Link to='/firearms' className="nav-link">Firearms</Link> </li>
+          <li className="nav-item">
+            <Link to="/" className="nav-link">
+              Home
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link to="/clients" className="nav-link">
+              Clients
+            </Link>{" "}
+          </li>
+          <li className="nav-item">
+            <Link to="/vendors" className="nav-link">
+              Vendors
+            </Link>{" "}
+          </li>
+          <li className="nav-item">
+            <Link to="/firearms" className="nav-link">
+              Firearms
+            </Link>{" "}
+          </li>
+          <li className="nav-item">
+            <Link to="/applications" className="nav-link">
+              Applications
+            </Link>{" "}
+          </li>
+          <li className="nav-item">
+            <Link to="/licences" className="nav-link">
+              Licences
+            </Link>{" "}
+          </li>
           {user ? (
             <>
               <li className="nav-item">
@@ -46,7 +73,7 @@ const Header = () => {
         </ul>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;
